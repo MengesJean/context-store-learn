@@ -10,7 +10,7 @@ type CardImageProps = {
 }
 export const Card = ({children}: CardProps) => {
     return (
-        <div className={"rounded border bg-white flex flex-col"}>
+        <div className={"rounded border bg-background flex flex-col"}>
             {children}
         </div>
     )
@@ -26,7 +26,7 @@ export const CardImage = ({src, alt}: CardImageProps) => {
 
 export const CardContent = ({children}: CardProps) => {
     return (
-        <div className={"p-4"}>
+        <div className={"p-4 text-foreground"}>
             {children}
         </div>
     )

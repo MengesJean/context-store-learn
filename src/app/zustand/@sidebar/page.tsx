@@ -7,7 +7,7 @@ export default function Sidebar() {
     const {cart} = useCartStore();
 
     return (
-        <div className={"bg-white p-4"}>
+        <div className={"bg-background border border-foreground p-4"}>
             <h2 className={"text-2xl font-medium"}>Cart</h2>
             <p className={"text-sm text-gray-500"}>You have {cart.length} items in your cart</p>
             <div className={"mt-4"}>

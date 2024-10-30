@@ -1,14 +1,20 @@
 import {create} from "zustand";
-import {Product} from "@/context/CartContext";
+import {ProductType} from "@/actions/product.type";
 
-const useCartStore = create((set) => ({
+type CartStore = {
+    cart: ProductType[];
+    removeFromCart: (id: string) => void;
+    addToCart: (product: ProductType) => void;
+}
+
+const useCartStore = create<CartStore>((set) => ({
     cart: [],
     removeFromCart: (id: string) => {
         set((state) => ({
             cart: state.cart.filter((product) => product.id !== id)
         }));
     },
-    addToCart: (product: Product) => {
+    addToCart: (product: ProductType) => {
         set((state) => ({
             cart: [...state.cart, product]
         }));

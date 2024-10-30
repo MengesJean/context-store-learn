@@ -2,8 +2,13 @@
 import React, {useContext} from 'react';
 import {Button} from "@/components/Button";
 import {CartContext} from "@/context/CartContext";
+import {ProductType} from "@/actions/product.type";
 
-const AddToCartButton = ({children, product}) => {
+type AddToCartButtonProps = {
+    children: React.ReactNode;
+    product: ProductType;
+}
+const AddToCartButton = ({children, product}: AddToCartButtonProps) => {
     const {addToCart, removeFromCart, isInCart, cart} = useContext(CartContext);
 
     const onToggleButton = () => {

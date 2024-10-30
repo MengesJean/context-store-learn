@@ -11,7 +11,7 @@ type NavigationItemProps = {
 
 export const Navigation = ({children}: NavigationProps) => {
     return (
-        <div className={"w-full bg-white"}>
+        <div className={"w-full"}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
                 {children}
             </div>

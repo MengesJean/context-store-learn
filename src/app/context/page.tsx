@@ -1,9 +1,10 @@
 import {getProducts} from "@/actions/product";
 import {Card, CardContent, CardFooter, CardImage} from "@/components/Card";
 import AddToCartButton from "@/components/AddToCartButton";
+import {ProductType} from "@/actions/product.type";
 
 export default async function Page() {
-    const products = await getProducts();
+    const products = await getProducts() as ProductType[];
 
     return (
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

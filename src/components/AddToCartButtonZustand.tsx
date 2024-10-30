@@ -2,8 +2,14 @@
 import React, {useContext} from 'react';
 import {Button} from "@/components/Button";
 import useCartStore from "@/store/productStore";
+import {ProductType} from "@/actions/product.type";
 
-const AddToCartButtonZustand = ({children, product}) => {
+type AddToCartButtonZustandProps = {
+    children: React.ReactNode;
+    product: ProductType;
+}
+
+const AddToCartButtonZustand = ({children, product}: AddToCartButtonZustandProps) => {
     const addToCart = useCartStore(s => s.addToCart)
     const removeFromCart = useCartStore(s => s.removeFromCart)
     const isInCart = useCartStore(s => s.cart.includes(product));
